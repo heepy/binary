@@ -61,28 +61,47 @@ public class BinTree<T extends Comparable<T>> {
 		}
 		return false;
 	}
-	public void  PreTraversal_non_Recu() {//前序遍历（非递归实现）需要借助栈来实现
-		 Stack<Node> stack = new Stack<>();
-	
-		if(root == null) {
+
+	public void PreTraversal_non_Recu() {// 前序遍历（非递归实现）需要借助栈来实现
+		Stack<Node> stack = new Stack<>();
+
+		if (root == null) {
 			System.out.println("二叉树为空");
-		}else {
+		} else {
 			System.out.println("二叉树前序遍历:");
 			Node<T> cNode = root;
-			while (cNode!=null||!stack.isEmpty()) {
-			   while(cNode!=null) {
-				   System.out.print(cNode.getData());
-				   stack.push(cNode);
-				   cNode=cNode.getlChild();
-			   }
-			   if(!stack.isEmpty()) {
-				   cNode=stack.pop();
-				   cNode=cNode.getrChild();
-			   }
-                				
+			while (cNode != null || !stack.isEmpty()) {
+				while (cNode != null) {
+					System.out.print(cNode.getData()+" ");
+					stack.push(cNode);
+					cNode = cNode.getlChild();
+				}
+				if (!stack.isEmpty()) {
+					cNode = stack.pop();
+					cNode = cNode.getrChild();
+				}
+
 			}
 		}
-		
+
+	}
+
+	private void PreTraversal(Node node) {// 前序遍历（递归实现）
+		if (node != null) {
+			System.out.print(node.getData() + " ");
+			PreTraversal(node.getlChild());
+			PreTraversal(node.getrChild());
+		}
+	}
+
+	public void PreTraversal_Recu() { // 封装实现
+		if (root != null) {
+			System.out.println("前序遍历（递归实现）");
+          PreTraversal(root);
+		}else {
+			System.out.println("二叉树为空");
+		}
+
 	}
 
 	public BinTree() {

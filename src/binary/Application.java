@@ -13,7 +13,7 @@ public class Application {
 		binTree.insertNode(7);
 		System.out.println("数字1的查找結果是"+binTree.findValue(1));
 		System.out.println("数字6的查找結果是"+binTree.findValue(6));
-		System.out.println("前序遍历(非递归)");
 	    binTree.PreTraversal_non_Recu();
+	    binTree.PreTraversal_Recu();
 	}
 }
