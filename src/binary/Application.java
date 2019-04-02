@@ -1,5 +1,7 @@
 package binary;
 
+import java.nio.FloatBuffer;
+import java.io.*;;
 public class Application {
 
 	public static void main(String[] args) {
@@ -15,5 +17,6 @@ public class Application {
 		System.out.println("数字6的查找結果是"+binTree.findValue(6));
 	    binTree.PreTraversal_non_Recu();
 	    binTree.PreTraversal_Recu();
+	   
 	}
 }
